@@ -7,13 +7,16 @@
 //	system("pause");
 //	return 0;
 //}
+#include "resource.h"
 
 #include <windows.h>
+
+HINSTANCE g_hInstace;
 
 LRESULT CALLBACK WndProc(HWND, UINT, WPARAM, LPARAM);
 
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPreInstance, LPTSTR lpCmdLine, int nCmdShow) {
-
+	g_hInstace = hInstance;
 	//MessageBox(NULL, TEXT("°®°×²ËµÄÐ¡À¥³æ"), TEXT("À¥³æ"), MB_OK);
 	TCHAR szClassName[] = TEXT("my window");
 
@@ -57,18 +60,45 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPreInstance, LPTSTR lpCmdLine
 
 LRESULT CALLBACK WndProc(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam) {
 
-	HDC hdc;
+	HDC hdc, hdcMem;
 	PAINTSTRUCT ps;
 	RECT rect;
+	HINSTANCE hInstance;
+	BITMAP bitmap;
+
+	static HBITMAP hBitmap;
+	static int cxSource, cySource, cxClient, cyClient;
 
 	switch (Msg) {
+	case WM_CREATE:
+		hInstance = ((LPCREATESTRUCT)lParam)->hInstance;
+		hBitmap = LoadBitmap(hInstance, MAKEINTRESOURCE(IDB_BITMAP1));
+
+		GetObject(hBitmap, sizeof(BITMAP), &bitmap);
+
+		cxSource = bitmap.bmWidth;
+		cySource = bitmap.bmHeight;
+
+		break;
+	case WM_SIZE:
+		cxClient = LOWORD(lParam);
+		cyClient = HIWORD(lParam);
+		break;
 	case WM_PAINT:
 		hdc = BeginPaint(hWnd, &ps);
 
 		GetClientRect(hWnd, &rect);
+		
+		hdcMem = CreateCompatibleDC(hdc);
+		SelectObject(hdcMem, hBitmap);
 
-		DrawText(hdc, TEXT("°®°×²ËµÄÐ¡À¥³æ"), -1, &rect,
-			DT_SINGLELINE | DT_CENTER | DT_VCENTER);
+		BitBlt(hdc, 0, 0, cxSource, cySource, hdcMem, 0, 0, SRCCOPY);
+
+		DeleteDC(hdcMem);                                               
+
+		Ellipse(hdc, 
+			cxClient/2-50, cyClient/2-50, 
+			cxClient/2+50, cyClient/2+50);
 
 		EndPaint(hWnd, &ps);
 		break;
