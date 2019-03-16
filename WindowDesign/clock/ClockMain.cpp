@@ -8,8 +8,9 @@
 //	return 0;
 //}
 #include "resource.h"
+#include "ClockFunc.h"
 
-#include <windows.h>
+
 
 HINSTANCE g_hInstace;
 
@@ -68,6 +69,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam) {
 
 	static HBITMAP hBitmap;
 	static int cxSource, cySource, cxClient, cyClient;
+	static HBRUSH hBrush;
 
 	switch (Msg) {
 	case WM_CREATE:
@@ -79,31 +81,67 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam) {
 		cxSource = bitmap.bmWidth;
 		cySource = bitmap.bmHeight;
 
+		hBrush = CreateSolidBrush(RGB(123, 111, 222));
+
+		srand((unsigned int)time(NULL));
+
+		SetTimer(hWnd, ID_TIMER1, 1000, NULL);
+		
+		wm_create();
+
 		break;
 	case WM_SIZE:
 		cxClient = LOWORD(lParam);
 		cyClient = HIWORD(lParam);
+
+		setClient(cxClient, cyClient);
+		break;
+	case WM_TIMER:
+		hdc = GetDC(hWnd);
+
+		//InvalidateRect(hWnd, NULL, TRUE);
+		DrawHand(hdc);
+
+		ReleaseDC(hWnd, hdc);
 		break;
 	case WM_PAINT:
 		hdc = BeginPaint(hWnd, &ps);
 
 		GetClientRect(hWnd, &rect);
 		
-		hdcMem = CreateCompatibleDC(hdc);
-		SelectObject(hdcMem, hBitmap);
+		//hdcMem = CreateCompatibleDC(hdc);
+		//SelectObject(hdcMem, hBitmap);
 
-		BitBlt(hdc, 0, 0, cxSource, cySource, hdcMem, 0, 0, SRCCOPY);
+		//BitBlt(hdc, 0, 0, cxSource, cySource, hdcMem, 0, 0, SRCCOPY);
 
-		DeleteDC(hdcMem);                                               
+		//DeleteDC(hdcMem);
 
-		Ellipse(hdc, 
-			cxClient/2-50, cyClient/2-50, 
-			cxClient/2+50, cyClient/2+50);
+		//SelectObject(hdc, GetStockObject(WHITE_PEN));
+		//SelectObject(hdc, hBrush);
+		//SelectObject(hdc, GetStockObject(BLACK_BRUSH));
+
+		//Ellipse(hdc, 
+		//	cxClient/2-50, cyClient/2-50, 
+		//	cxClient/2+50, cyClient/2+50);
+
+		//SelectObject(hdc, GetStockObject(WHITE_PEN));
+
+		//Ellipse(hdc,
+		//	cxClient / 3 - 50, cyClient / 3 - 50,
+		//	cxClient / 3 + 50, cyClient / 3 + 50);
+
+		DrawClockPlate(hdc);
+
+		DrawHand(hdc);
 
 		EndPaint(hWnd, &ps);
 		break;
 	case WM_DESTROY:
 		PostQuitMessage(0);
+
+		DeleteObject(hBrush);
+
+		KillTimer(hWnd,ID_TIMER1);
 		break;
 	}
 

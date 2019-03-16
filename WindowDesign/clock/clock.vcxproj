@@ -116,9 +116,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ClockFunc.cpp" />
     <ClCompile Include="ClockMain.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ClockFunc.h" />
     <ClInclude Include="resource.h" />
   </ItemGroup>
   <ItemGroup>
