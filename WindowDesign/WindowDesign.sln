@@ -9,6 +9,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Clock", "Clock\clock.vcxpro
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Calculation", "Calculation\Calculation.vcxproj", "{FEC8AA63-B597-445C-8A72-5DA252AF31F4}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Video", "video\video.vcxproj", "{DA42B120-3705-4C9C-91DC-3A1E84E542AF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Mixed Platforms = Debug|Mixed Platforms
@@ -67,6 +69,20 @@ Global
 		{FEC8AA63-B597-445C-8A72-5DA252AF31F4}.Release|x64.ActiveCfg = Release|Win32
 		{FEC8AA63-B597-445C-8A72-5DA252AF31F4}.Release|x86.ActiveCfg = Release|Win32
 		{FEC8AA63-B597-445C-8A72-5DA252AF31F4}.Release|x86.Build.0 = Release|Win32
+		{DA42B120-3705-4C9C-91DC-3A1E84E542AF}.Debug|Mixed Platforms.ActiveCfg = Debug|Win32
+		{DA42B120-3705-4C9C-91DC-3A1E84E542AF}.Debug|Mixed Platforms.Build.0 = Debug|Win32
+		{DA42B120-3705-4C9C-91DC-3A1E84E542AF}.Debug|Win32.ActiveCfg = Debug|Win32
+		{DA42B120-3705-4C9C-91DC-3A1E84E542AF}.Debug|Win32.Build.0 = Debug|Win32
+		{DA42B120-3705-4C9C-91DC-3A1E84E542AF}.Debug|x64.ActiveCfg = Debug|Win32
+		{DA42B120-3705-4C9C-91DC-3A1E84E542AF}.Debug|x86.ActiveCfg = Debug|Win32
+		{DA42B120-3705-4C9C-91DC-3A1E84E542AF}.Debug|x86.Build.0 = Debug|Win32
+		{DA42B120-3705-4C9C-91DC-3A1E84E542AF}.Release|Mixed Platforms.ActiveCfg = Release|Win32
+		{DA42B120-3705-4C9C-91DC-3A1E84E542AF}.Release|Mixed Platforms.Build.0 = Release|Win32
+		{DA42B120-3705-4C9C-91DC-3A1E84E542AF}.Release|Win32.ActiveCfg = Release|Win32
+		{DA42B120-3705-4C9C-91DC-3A1E84E542AF}.Release|Win32.Build.0 = Release|Win32
+		{DA42B120-3705-4C9C-91DC-3A1E84E542AF}.Release|x64.ActiveCfg = Release|Win32
+		{DA42B120-3705-4C9C-91DC-3A1E84E542AF}.Release|x86.ActiveCfg = Release|Win32
+		{DA42B120-3705-4C9C-91DC-3A1E84E542AF}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
