@@ -9,7 +9,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPreInstance, LPTSTR lpCmdLine
 	//fun3();
 	//fun4(hInstance, hPreInstance, lpCmdLine, nCmdShow);
 	fun5(hInstance, hPreInstance, lpCmdLine, nCmdShow);
-
+	
 	//system("pause");
 	return EXIT_SUCCESS;
 }
