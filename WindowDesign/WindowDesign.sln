@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.21005.1
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28729.10
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "WindowDesign", "WindowDesign\WindowDesign.vcxproj", "{FCF8C16F-94A0-49C3-8EA6-921C4672FEA2}"
 EndProject
@@ -16,6 +16,8 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SocketClient", "SocketClient\SocketClient.vcxproj", "{9F7407AC-5834-4E0B-AB0B-752BCC3B9058}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Thread", "Thread\Thread.vcxproj", "{04B4F321-F82A-4DB8-AD32-89F6E11239E7}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SqlServer", "SqlServer\SqlServer.vcxproj", "{599100CB-422F-4B9A-B148-B281226017FD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -131,6 +133,22 @@ Global
 		{04B4F321-F82A-4DB8-AD32-89F6E11239E7}.Release|x64.ActiveCfg = Release|Win32
 		{04B4F321-F82A-4DB8-AD32-89F6E11239E7}.Release|x86.ActiveCfg = Release|Win32
 		{04B4F321-F82A-4DB8-AD32-89F6E11239E7}.Release|x86.Build.0 = Release|Win32
+		{599100CB-422F-4B9A-B148-B281226017FD}.Debug|Mixed Platforms.ActiveCfg = Debug|Win32
+		{599100CB-422F-4B9A-B148-B281226017FD}.Debug|Mixed Platforms.Build.0 = Debug|Win32
+		{599100CB-422F-4B9A-B148-B281226017FD}.Debug|Win32.ActiveCfg = Debug|Win32
+		{599100CB-422F-4B9A-B148-B281226017FD}.Debug|Win32.Build.0 = Debug|Win32
+		{599100CB-422F-4B9A-B148-B281226017FD}.Debug|x64.ActiveCfg = Debug|x64
+		{599100CB-422F-4B9A-B148-B281226017FD}.Debug|x64.Build.0 = Debug|x64
+		{599100CB-422F-4B9A-B148-B281226017FD}.Debug|x86.ActiveCfg = Debug|Win32
+		{599100CB-422F-4B9A-B148-B281226017FD}.Debug|x86.Build.0 = Debug|Win32
+		{599100CB-422F-4B9A-B148-B281226017FD}.Release|Mixed Platforms.ActiveCfg = Release|Win32
+		{599100CB-422F-4B9A-B148-B281226017FD}.Release|Mixed Platforms.Build.0 = Release|Win32
+		{599100CB-422F-4B9A-B148-B281226017FD}.Release|Win32.ActiveCfg = Release|Win32
+		{599100CB-422F-4B9A-B148-B281226017FD}.Release|Win32.Build.0 = Release|Win32
+		{599100CB-422F-4B9A-B148-B281226017FD}.Release|x64.ActiveCfg = Release|x64
+		{599100CB-422F-4B9A-B148-B281226017FD}.Release|x64.Build.0 = Release|x64
+		{599100CB-422F-4B9A-B148-B281226017FD}.Release|x86.ActiveCfg = Release|Win32
+		{599100CB-422F-4B9A-B148-B281226017FD}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
