@@ -1,4 +1,4 @@
-#define _CRT_SECURE_NO_WARNINGS
+#define _WINSOCK_DEPRECATED_NO_WARNINGS
 
 #include <stdio.h>
 #include <winsock2.h>
@@ -31,8 +31,16 @@ int main(){
 		return -1;
 	}
 
-	char buf[1024] = "爱白菜的小昆虫";
-	scanf("%s", buf);
+	char buf[20000];
+	int cnt = 0, i = 0;
+	for ( i = 0; i < 10000; ++i) {
+		if (i % 1000 == 0) {
+			++cnt;
+		}
+		buf[i] = '0' + cnt;
+	}
+	buf[i-1] = '\0';
+	//scanf("%s", buf);
 	//发送信息
 	if (send(s, buf, strlen(buf), 0) == SOCKET_ERROR){
 		MessageBox(NULL, TEXT("send message fail"), TEXT("message"), MB_OK);

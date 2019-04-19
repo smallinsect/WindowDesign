@@ -1,3 +1,4 @@
+#define _WINSOCK_DEPRECATED_NO_WARNINGS
 #define _CRT_SECURE_NO_WARNINGS
 
 #include <stdio.h>
@@ -49,7 +50,7 @@ int main(){
 			break;
 		}
 
-		char buf[1024];
+		char buf[20000];
 		memset(buf, 0, sizeof(buf));
 		ret = recv(s_new, buf, sizeof(buf), 0);
 		if (ret == 0 || ret == SOCKET_ERROR){

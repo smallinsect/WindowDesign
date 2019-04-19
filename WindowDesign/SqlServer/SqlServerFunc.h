@@ -23,7 +23,10 @@
 #include <fstream>
 #include <vector>
 #include <string>
+#include <winsock2.h>
 using namespace std;
+
+
 void func1();
 
 void func2();
